@@ -1,0 +1,5 @@
+.idea/
+.vagrant/
+composer.phar
+config.php
+vendor/

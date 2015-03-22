@@ -1,0 +1,144 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "8c2b5905bde0f7c59c5db152e7b5e79f",
+    "packages": [
+        {
+            "name": "fightbulc/jsonrpc_curl",
+            "version": "0.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fightbulc/jsonrpc_curl.git",
+                "reference": "ab7e08822329dbf2655ff25d1785d90d68d51651"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fightbulc/jsonrpc_curl/zipball/ab7e08822329dbf2655ff25d1785d90d68d51651",
+                "reference": "ab7e08822329dbf2655ff25d1785d90d68d51651",
+                "shasum": ""
+            },
+            "require": {
+                "fightbulc/php_curl": "1.0.0",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tino Ehrich",
+                    "email": "opensource@efides.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "JSON-RPC CURL",
+            "homepage": "https://github.com/fightbulc/jsonrpc_curl",
+            "keywords": [
+                "json-rpc-client"
+            ],
+            "time": "2013-03-11 17:31:55"
+        },
+        {
+            "name": "fightbulc/php_curl",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fightbulc/php_curl.git",
+                "reference": "bb35c3918e1e9e4015f6ec246d5589aafa7068ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fightbulc/php_curl/zipball/bb35c3918e1e9e4015f6ec246d5589aafa7068ab",
+                "reference": "bb35c3918e1e9e4015f6ec246d5589aafa7068ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "BauerUK",
+                    "homepage": "https://github.com/BauerUK"
+                }
+            ],
+            "description": "PHP CURL as object-oriented implementation.",
+            "homepage": "https://github.com/fightbulc/php_curl",
+            "time": "2012-10-22 00:29:11"
+        },
+        {
+            "name": "league/statsd",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/statsd.git",
+                "reference": "e3b4057939930a5f37f7654df9307ae17b4ef8a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/statsd/zipball/e3b4057939930a5f37f7654df9307ae17b4ef8a0",
+                "reference": "e3b4057939930a5f37f7654df9307ae17b4ef8a0",
+                "shasum": ""
+            },
+            "require-dev": {
+                "illuminate/foundation": "~4.0",
+                "illuminate/support": "~4.0",
+                "silex/silex": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\StatsD\\": "src",
+                    "League\\StatsD\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Qualie",
+                    "email": "marc@marcqualie.com",
+                    "homepage": "http://marcqualie.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library for working with StatsD in PHP.",
+            "homepage": "https://github.com/thephpleague/statsd",
+            "keywords": [
+                "graphite",
+                "library",
+                "statsd"
+            ],
+            "time": "2014-02-01 18:45:22"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

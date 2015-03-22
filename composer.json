@@ -1,0 +1,16 @@
+{
+  "name": "mseven/bitdog",
+  "description": "Query a Bitcoin nodes status via Json RPC, and push it to Datadogs stats API",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Martin Griesbach",
+      "email": "mgriesbach@gmail.com"
+    }
+  ],
+  "require": {
+    "league/statsd": "v1.1.0",
+    "fightbulc/jsonrpc_curl": "0.5.2"
+  }
+}
