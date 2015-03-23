@@ -7,6 +7,8 @@ use League\StatsD\Client as Statsd;
 require('vendor/autoload.php');
 require('config.php');
 
+define('CACHE_FILE', 'transfers.cache');
+
 
 function unparseUrl($urlParts)
 {
@@ -33,20 +35,22 @@ function doRequest($method, $conf)
 {
     static $requestId = 0;
     $requestId++;
-    var_dump($requestId);
     $url      = unparseUrl($conf);
     $response = (new JsonRpcCurl())
         ->setUrl($url)// server url with gateway path
         ->setId($requestId)// request ID (important for batch/async)
         ->setMethod($method)// requested service
         ->send();
-    var_dump($response);
     return $response;
 }
 
+/**
+ * Init StatsD Client.
+ */
+$dd = new Statsd();
+
 $response = doRequest('getinfo', $conf);
 
-$dd = new Statsd();
 if (is_array($response)) {
     $dd->gauge('btc.connections', $response['connections']);
     $dd->gauge('btc.difficulty', $response['difficulty']);
@@ -58,4 +62,20 @@ $response = doRequest('getnettotals', $conf);
 if (is_array($response)) {
     $dd->gauge('btc.net.in', $response['totalbytesrecv']);
     $dd->gauge('btc.net.out', $response['totalbytessent']);
+
+    if (file_exists(CACHE_FILE)) {
+
+        $lastData = unserialize(file_get_contents(CACHE_FILE));
+
+        // divide by 1000 to get seconds instead of milliseconds.
+        $timeDiff = ($response['timemillis'] - $lastData['timemillis']) / 1000;
+        $inDiff   = $response['totalbytesrecv'] - $lastData['totalbytesrecv'];
+        $outDiff  = $response['totalbytessent'] - $lastData['totalbytessent'];
+
+        $dd->gauge('btc.net.in_sec', $inDiff / $timeDiff);
+        $dd->gauge('btc.net.out_sec', $outDiff / $timeDiff);
+    }
+
+    file_put_contents(CACHE_FILE, serialize($response));
+
 }
