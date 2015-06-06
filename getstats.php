@@ -45,6 +45,21 @@ function doRequest($method, $conf)
 }
 
 /**
+ * Helper to only export a Gauge when the array key is present in the data.
+ *
+ * @param        $name
+ * @param        $key
+ * @param array  $response
+ * @param Statsd $dd
+ */
+function writeGauge($name, $key, array $response, Statsd $dd)
+{
+    if (array_key_exists($key, $response)) {
+        $dd->gauge($name, $response[$key]);
+    }
+}
+
+/**
  * Init StatsD Client.
  */
 $dd = new Statsd();
@@ -52,16 +67,16 @@ $dd = new Statsd();
 $response = doRequest('getinfo', $conf);
 
 if (is_array($response)) {
-    $dd->gauge('btc.connections', $response['connections']);
-    $dd->gauge('btc.difficulty', $response['difficulty']);
-    $dd->gauge('btc.blockcount', $response['blocks']);
+    writeGauge('btc.connections', 'connections', $response, $dd);
+    writeGauge('btc.difficulty', 'difficulty', $response, $dd);
+    writeGauge('btc.blockcount', 'blockcount', $response, $dd);
 }
 
 $response = doRequest('getnettotals', $conf);
 
 if (is_array($response)) {
-    $dd->gauge('btc.net.in', $response['totalbytesrecv']);
-    $dd->gauge('btc.net.out', $response['totalbytessent']);
+    writeGauge('btc.net.in', 'totalbytesrecv', $response, $dd);
+    writeGauge('btc.net.out', 'totalbytessent', $response, $dd);
 
     if (file_exists(CACHE_FILE)) {
 
