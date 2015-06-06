@@ -12,6 +12,7 @@ RUN rm -f /etc/cron.daily/standard
 ADD './' /srv/bitdog
 
 WORKDIR /srv/bitdog
+RUN mv config.docker.php config.php
 
 RUN curl -sSk https://getcomposer.org/installer | php
 RUN php composer.phar install

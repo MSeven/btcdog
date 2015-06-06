@@ -56,6 +56,9 @@ function writeGauge($name, $key, array $response, Statsd $dd)
 {
     if (array_key_exists($key, $response)) {
         $dd->gauge($name, $response[$key]);
+        return true;
+    } else {
+        echo "Key " . $key . " not found in result\n";
     }
 }
 
