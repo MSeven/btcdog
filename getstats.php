@@ -72,7 +72,7 @@ $response = doRequest('getinfo', $conf);
 if (is_array($response)) {
     writeGauge('btc.connections', 'connections', $response, $dd);
     writeGauge('btc.difficulty', 'difficulty', $response, $dd);
-    writeGauge('btc.blockcount', 'blockcount', $response, $dd);
+    writeGauge('btc.blockcount', 'blocks', $response, $dd);
 }
 
 $response = doRequest('getnettotals', $conf);
