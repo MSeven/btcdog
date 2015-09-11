@@ -10,7 +10,8 @@
     }
   ],
   "require": {
+    "php": ">=5.6",
     "league/statsd": "v1.1.0",
-    "fightbulc/jsonrpc_curl": "0.5.2"
+    "graze/guzzle-jsonrpc": "~2.1"
   }
 }
