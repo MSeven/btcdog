@@ -137,5 +137,4 @@ class btcDog
 }
 
 $x = new btcDog();
-$x->mainBtc($confBtc);
 $x->mainEth($confEth);
