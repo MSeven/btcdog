@@ -9,14 +9,32 @@ require('vendor/autoload.php');
 require('config.php');
 
 
+/**
+ * Class btcDog
+ */
 class btcDog
 {
+    /**
+     *
+     */
     const BTC_CACHE_FILE = 'btc_transfers.cache';
+    /**
+     *
+     */
     const ETH_CACHE_FILE = 'eth_transfers.cache';
 
+    /**
+     * @var Statsd
+     */
     private $dd;
+    /**
+     * @var int
+     */
     private $requestId;
 
+    /**
+     * btcDog constructor.
+     */
     public function __construct()
     {
         /**
@@ -26,6 +44,10 @@ class btcDog
         $this->requestId = 0;
     }
 
+    /**
+     * @param $urlParts
+     * @return string
+     */
     function unparseUrl($urlParts)
     {
         $scheme = isset($urlParts['scheme']) ? $urlParts['scheme'] . '://' : '';
@@ -74,6 +96,11 @@ class btcDog
         }
     }
 
+    /**
+     * @param $method
+     * @param $conf
+     * @param array $params
+     */
     function ethGaugeRequest($method, $conf, $params = array())
     {
         $response = $this->doRequest($method, $conf, $params);
@@ -119,6 +146,9 @@ class btcDog
         }
     }
 
+    /**
+     * @param $conf
+     */
     public function mainEth($conf)
     {
 
