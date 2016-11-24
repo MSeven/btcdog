@@ -12,11 +12,18 @@ $script = <<SCRIPT
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    config.vm.box = "ubuntu/vivid64"
+    config.vm.box = "bento/debian-8.6"
     config.vm.hostname = "btcdog-docker"
+
+    config.vm.provider :virtualbox do |v|
+        v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+        v.customize ["modifyvm", :id, "--memory", 2048]
+    end
 
     if Vagrant.has_plugin?("vagrant-cachier")
         config.cache.scope = :box
+        config.cache.enable :apt
+        config.cache.enable :composer
     end
 
      config.vm.provision "shell", inline: $script
