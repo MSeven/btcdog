@@ -5,6 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 $script = <<SCRIPT
+    apt-get update
     apt-get -y --no-install-recommends install php5-cli curl php5-curl git
     cd /vagrant
     curl -sSk https://getcomposer.org/installer | php
