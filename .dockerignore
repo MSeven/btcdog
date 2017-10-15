@@ -1,0 +1,6 @@
+vendor
+Vagrantfile
+config.sample.php
+.gitlab-ci.yml
+.gitignore
+.vagrant
