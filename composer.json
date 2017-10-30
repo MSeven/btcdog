@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": ">=5.5",
-    "league/statsd": "v1.4.0",
+    "league/statsd": "~v1.4",
     "graze/guzzle-jsonrpc": "3.2.1"
   }
 }

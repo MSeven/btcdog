@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ab1bc9613c3d914b2d2b19e826d3600",
+    "content-hash": "05947048c7b49638a4d06a6c5b02e0b9",
     "packages": [
         {
             "name": "graze/guzzle-jsonrpc",
@@ -248,21 +248,21 @@
         },
         {
             "name": "league/statsd",
-            "version": "1.4.0",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/statsd.git",
-                "reference": "92f34c882a6c4a553aa76d73169d4c1ed185f836"
+                "reference": "bee97e7ab60f0342f1f7b71748c012a04fcdbbb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/statsd/zipball/92f34c882a6c4a553aa76d73169d4c1ed185f836",
-                "reference": "92f34c882a6c4a553aa76d73169d4c1ed185f836",
+                "url": "https://api.github.com/repos/thephpleague/statsd/zipball/bee97e7ab60f0342f1f7b71748c012a04fcdbbb2",
+                "reference": "bee97e7ab60f0342f1f7b71748c012a04fcdbbb2",
                 "shasum": ""
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
-                "silex/silex": "~1.0"
+                "silex/silex": "~2.0"
             },
             "type": "library",
             "autoload": {
@@ -290,7 +290,7 @@
                 "library",
                 "statsd"
             ],
-            "time": "2016-04-21T18:22:15+00:00"
+            "time": "2017-07-17T17:01:13+00:00"
         },
         {
             "name": "psr/http-message",
